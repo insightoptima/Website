@@ -52,14 +52,15 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1240px;
+    max-widt: 1240px;
   }
 }
 #gtco-main-nav {
+
   padding: 20px 0;
 }
 #gtco-main-nav .navbar-brand {
-  font-size: 32px;
+  font-size: 25px;
   font-family: "Lato-Black";
   text-transform: none; /* Changed from uppercase to none */
   background: -webkit-linear-gradient(left, #1d3ede, #01e6f8);
@@ -73,6 +74,17 @@ body {
   -ms-text-fill-color: transparent;
   -o-text-fill-color: transparent;
 }
+.brand-logo{
+
+    width: 220px; /* Set the width of the logo */
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+    margin-right: 15px; /* Space between the logo and the text */
+     object-fit: contain;
+    
+}
+
+
+
 #gtco-main-nav .bar1, #gtco-main-nav .bar2, #gtco-main-nav .bar3 {
   width: 25px;
   height: 2px;
@@ -95,7 +107,7 @@ body {
 }
 #gtco-main-nav .navbar-nav li a {
   font-family: "OpenSans-Regular";
-  font-size: 18px;
+  font-size: 17px;
   color: #666666;
   padding: 5px 15px !important;
   text-transform: none;
@@ -122,6 +134,101 @@ body {
     color: #1d3ede;
   }
 }
+/*---------------------------------------------------------*/
+
+/* Modal Styling */
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Subtle dark background */
+    padding-top: 50px;
+}
+
+.modal-content1 {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%;  /* Full width but restricted by max-width */
+    max-width: 400px; /* Microsoft-like modal width */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.modal-content1 h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content1 input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 2px solid #E1E1E1; /* Light gray border */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F9F9F9; /* Subtle background */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.modal-content1 input:focus {
+    border-color: #0078D4; /* Microsoft blue */
+    background-color: #fff;
+    outline: none;
+}
+
+.modal-content1 button {
+    background-color: #0078D4; /* Microsoft blue */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content1 button:hover {
+    background-color: #005A9E; /* Darker blue on hover */
+}
+
+.close {
+    color: #aaa;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Adding subtle transition effect for modal */
+.modal1 {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------*/
 #gtco-main-nav::after {
   position: absolute;
   content: "";
@@ -184,7 +291,7 @@ body {
 }
 @media (max-width: 1199px) {
   #gtco-main-nav::before {
-    width: 710px;
+  width: 710px;
   }
 }
 @media (max-width: 991px) {
@@ -243,9 +350,10 @@ body {
   margin-top: 20px;
   min-height: 500px;
 }
+/* --Unlock smarter decisions with--*/
 .gtco-banner-area h1 {
   font-family: "Lato-Light";
-  font-size: 48px;
+  font-size: 44px;
   color: #000000;
   max-width: 500px;
   margin-top: 70px;
@@ -428,7 +536,7 @@ body {
   content: "";
   height: 100px;
   width: 100%;
-  border: 2px solid red;
+  border: 2px sod red;
 }
 .gtco-numbers-block svg {
   margin-top: -100px;
@@ -643,7 +751,7 @@ body {
 
 .gtco-logo-area {
   margin: 50px auto;
-}
+}*
 .gtco-logo-area .col .img-fluid {
   max-height: 32px;
 }
@@ -654,6 +762,7 @@ body {
     margin: 20px 0;
   }
 }
+
 
 .gtco-news {
   background: #fcfcfc;
