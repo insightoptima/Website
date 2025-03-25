@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>InsightOptima - Free Responsive Agency Template using Bootstrap 4</title>
-    <style>
-
-    </style>
+    <title>InsightOptima</title>
+    
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
-    <div class="container"><a class="navbar-brand">InsightOptima</a>
-        <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+    <div class="container"><!--<a class="navbar-brand">InsightOptima</a>-->
+        
+        <img class="brand-logo" src="images/Logo-VF-VF.png " alt="">
+             <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
                 class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
         <div id="my-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
@@ -35,19 +35,133 @@
                 <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <a href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">login</a> <a href="#"
-                                                                                                       class="btn btn-info my-2 my-sm-0 text-uppercase">sign
-                up</a>
+            <!-- Login and Sign-up btn -->
+          <!--  <form class="form-inline my-2 my-lg-0">
+                <a href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">login</a>
+                 <a href="#"class="btn btn-info my-2 my-sm-0 text-uppercase">signup</a>
             </form>
+                 <!-- Login and Sign-up btn -->
+    <form class="form-inline my-2 my-lg-0">
+        <a href="#" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase" id="loginBtn">login</a>
+        <a href="#" class="btn btn-info my-2 my-sm-0 text-uppercase" id="signupBtn">sign up</a>
+    </form>
+
+
+<!-- Modal for Login -->
+<div id="loginModal1" class="modal1">
+    <div class="modal-content1">
+        <span class="close" id="closeLoginModal1" aria-label="Close login modal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div id="loginErrorMessage" class="error-message"></div>
+            <input type="text" placeholder="Username" id="loginUsername" required>
+            <input type="password" placeholder="Password" id="loginPassword" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Sign Up -->
+<div id="signupModal1" class="modal1">
+    <div class="modal-content1">
+        <span class="close" id="closeSignupModal1" aria-label="Close sign-up modal">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div id="signupErrorMessage" class="error-message"></div>
+            <input type="text" placeholder="Username" id="signupUsername" required>
+            <input type="email" placeholder="Email" id="signupEmail" required>
+            <input type="password" placeholder="Password" id="signupPassword" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript for modal logic -->
+<script>
+    const loginModal = document.getElementById("loginModal1");
+    const signupModal = document.getElementById("signupModal1");
+
+    const loginBtn = document.getElementById("loginBtn");
+    const signupBtn = document.getElementById("signupBtn");
+
+    const closeLoginModal = document.getElementById("closeLoginModal1");
+    const closeSignupModal = document.getElementById("closeSignupModal1");
+
+    loginBtn.onclick = function() {
+        loginModal.style.display = "block";
+    }
+
+    signupBtn.onclick = function() {
+        signupModal.style.display = "block";
+    }
+
+    closeLoginModal.onclick = function() {
+        loginModal.style.display = "none";
+    }
+
+    closeSignupModal.onclick = function() {
+        signupModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === loginModal) {
+            loginModal.style.display = "none";
+        }
+        if (event.target === signupModal) {
+            signupModal.style.display = "none";
+        }
+    }
+
+    // Simple form validation (if needed)
+    document.getElementById("loginForm").onsubmit = function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Clear previous error message
+        document.getElementById("loginErrorMessage").innerText = "";
+
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+
+        if (username === "" || password === "") {
+            document.getElementById("loginErrorMessage").innerText = "Please fill in both fields.";
+        } else {
+            // You can implement further logic here, like AJAX requests for validation
+            loginModal.style.display = "none"; // Close modal on successful submission
+        }
+    }
+
+    document.getElementById("signupForm").onsubmit = function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Clear previous error message
+        document.getElementById("signupErrorMessage").innerText = "";
+
+        const username = document.getElementById("signupUsername").value;
+        const email = document.getElementById("signupEmail").value;
+        const password = document.getElementById("signupPassword").value;
+
+        if (username === "" || email === "" || password === "") {
+            document.getElementById("signupErrorMessage").innerText = "Please fill in all fields.";
+        } else {
+            // You can implement further logic here, like AJAX requests for validation
+            signupModal.style.display = "none"; // Close modal on successful submission
+        }
+    }
+</script>
+
+      
+  
+
+
         </div>
     </div>
 </nav>
+
 <div class="container-fluid gtco-banner-area">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 style="font-size: 44px;">Unlock smarter decisions with <span>InsightOptima</span> to drive your business success</h1>
+                <h1>Unlock smarter decisions with <span>InsightOptima</span> to drive your business success</h1>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus turpis nisl </p>
                 <a href="#">Contact Us <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
             <div class="col-md-6">
